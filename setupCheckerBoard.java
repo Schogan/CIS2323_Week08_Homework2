@@ -1,6 +1,5 @@
 import board.*;
 import piece.*;
-import game.*;
 import java.util.Scanner;
 public class setupCheckerBoard{
 	public static void main(String[] args){
@@ -11,7 +10,6 @@ public class setupCheckerBoard{
 		boolean cont = true;
 		Board board = new Board();
 		CheckersPiece piece = new CheckersPiece();
-		//Game game = new Game();
 		
 		while(cont){
 			System.out.println("=================================== \n");
@@ -20,8 +18,8 @@ public class setupCheckerBoard{
 			System.out.println("p) Print board \n");
 			System.out.println("g) Print game board \n");
 			System.out.println("b) Print black pieces \n");
+			System.out.println("t) Test space empty/occupied \n");
 			System.out.println("q) Quit game \n");
-			//System.out.println("d) Print count of ToDo \n");
 			System.out.println("=================================== \n");
 			
 			choice = inputDevice.next().charAt(0);
@@ -30,7 +28,6 @@ public class setupCheckerBoard{
 			if(choice=='y'){
 				board.Board();
 				piece.CheckersPiece();
-				//game.Game();
 			}
 			if(choice=='p'){
 				System.out.println("=================================== \n");
@@ -42,7 +39,10 @@ public class setupCheckerBoard{
 			}
 			if(choice=='b'){
 				System.out.println("=================================== \n");
-				//piece.printBlack();
+			}
+			if(choice=='t'){
+				System.out.println("=================================== \n");
+				piece.testSpace();
 			}
 			if(choice=='q'){
 				cont=false;

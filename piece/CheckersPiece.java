@@ -1,6 +1,7 @@
 package piece;
 import board.*;
 import java.*;
+import java.util.Scanner;
 
 public class CheckersPiece{
 	private int posX;
@@ -17,14 +18,12 @@ public class CheckersPiece{
 	
 	public CheckersPiece[][] currentGame = new CheckersPiece[8][8];
 	
-	//private CheckersPiece[][] black = new CheckersPiece[8][8];
 	private CheckersPiece[][] game = new CheckersPiece[8][8];
 	
 	private Board board = new Board();
 	
 	public void CheckersPiece(){
 		setupGame();
-		//blackCheckers();
 	}
 	
 	public void makeCheckers(){
@@ -43,7 +42,6 @@ public class CheckersPiece{
 	
 	public void setupGame(){
 		makeCheckers();
-		//board.updateBoardEmpty(currentGame);
 	}
 		
 	public void gamePieces(int a, int b){
@@ -92,6 +90,19 @@ public class CheckersPiece{
 		if (posY == 8){
 			posYChar = 'H';
 		}
+	}
+	
+	public void testSpace(){
+		for(int i=0;i<8;i++){
+			for(int j=0;j<8;j++){
+				System.out.print(currentGame[i][j].printInfo());
+				if(currentGame[i][j].tile=='R' ||currentGame[i][j].tile=='B'){
+					System.out.println("Occupied");
+				}else{System.out.println("empty");}
+								
+			}
+		}
+		
 	}
 	
 	public void printGame(){
